@@ -27,13 +27,18 @@ $(document).ready(function() {
     // console.log(obiwan.health);
 
 function appear(x){
-    $(x).removeClass("invisible");
-        $(x).addClass("visible");
+    if ($(x).hasClass("invisible")){
+      $(x).removeClass("invisible");
+        $(x).addClass("visible");  
+    }
+    
 }
 
 function disappear(x){
-    $(x).addClass("invisible");
-        $(x).removeClass("visible");
+    if ($(x).hasClass("visible")){
+      $(x).addClass("invisible");
+        $(x).removeClass("visible");  
+    }
 }
 
 $(".btn").on("click", function(){
@@ -62,22 +67,25 @@ $(".btn").on("click", function(){
         appear("#hero4");
     }
     else if($(this).is("#enemy1")){
+        appear(".enemy")
         disappear("#enemy1");
         disappear(".defender");
         appear("#defender1");
     }
     else if($(this).is("#enemy2")){
-        disappear("#enemy1");
+        disappear("#enemy2");
         disappear(".defender");
         appear("#defender2");
     }
-    else if ($(this).hasClass("#enemy2")){
-        disappear(".enemy2");
-        appear(".defender2"); 
+    else if($(this).is("#enemy3")){
+        disappear("#enemy3");
+        disappear(".defender");
+        appear("#defender3");
     }
-    else if ($(this).hasClass("#enemy1")){
-        disappear(".enemy1");
-        appear(".defender1"); 
+    else if($(this).is("#enemy4")){
+        disappear("#enemy4");
+        disappear(".defender");
+        appear("#defender4");
     }
 });
 
