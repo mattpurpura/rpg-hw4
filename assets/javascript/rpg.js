@@ -1,31 +1,37 @@
 $(document).ready(function() {
 
-
-
-    
-    var mario ={
+ var players = [
+     
+    {   name: "Mario",
         health: 100,
         attack: 10,
+        increment: 10,
         counter: 20,
-    }
-
-    var luigi ={
+    },  
+    {
+        name: "luigi",
         health: 150,
-        attack: 30,
-        counter: 5,
-    }
-
-    var wario ={
-        health: 175,
-        attack: 15,
-        counter: 15,
-    }
-
-    var waluigi ={
-        health: 130,
         attack: 5,
-        counter: 30,
+        increment: 5,
+        counter: 5,
+    },
+    {
+        name: "wario",
+        health: 150,
+        attack: 8,
+        increment: 8,
+        counter: 5,
+        
+    },
+    {
+        name: "waluigi",
+        health: 150,
+        attack: 3,
+        increment: 3,
+        counter: 5,
+        
     }
+ ];
 
 
 
@@ -43,44 +49,22 @@ $(document).ready(function() {
  function heroSelect(){
     for(let i = 0; i < 5; i++){
       if ($("#char" + i).hasClass("hero")){
-
+        playerone = players[i];
+        console.log(playerone);
      }
      else{
          $("#char"+ i).addClass("enemy")
      }  
     } 
-
-    if ($("#char1").hasClass("hero")){
-        playerone = mario;
-    }
-        else if ($("#char2").hasClass("hero")){
-            playerone = luigi;
-        }
-
-        else if ($("#char3").hasClass("hero")){
-            playerone = wario;
-        }
-
-        else if ($("#char4").hasClass("hero")){
-            playerone = waluigi;
-        }
  }
 
  function defenderSelect(){
-    if ($("#char1").hasClass("defender")){
-        playertwo = mario;
-    }
-        else if ($("#char2").hasClass("defender")){
-            playertwo = luigi;
-        }
-
-        else if ($("#char3").hasClass("defender")){
-            playertwo = wario;
-        }
-
-        else if ($("#char4").hasClass("defender")){
-            playertwo = waluigi;
-        }
+    for(let i = 0; i < 5; i++){
+        if ($("#char" + i).hasClass("defender")){
+          playertwo = players[i];
+          console.log(playertwo);
+       }
+      } 
  }
 
  function removeDefender(){
@@ -88,17 +72,14 @@ $(document).ready(function() {
         if ($("#char" + i).hasClass("defender")){
             $("#char" + i).removeClass("defender")
             $("#char"+ i).addClass("enemy")
-       }
-       else{
-           
-       }  
+       } 
       }
  }
 
  function attack(){
      playertwo.health -= playerone.attack;
      playerone.health -= playertwo.counter;
-     playerone.attack += playerone.attack;
+     playerone.attack += playerone.increment;
      
      if (playerone.health <= 0){
         alert("YOU SUCK STUPID")
@@ -135,8 +116,6 @@ if($(this).is("#attack")){
     attack();
     console.log("P1 Health: " + playerone.health, "P2 Health: " + playertwo.health);
 }
-
-
     
 });
 

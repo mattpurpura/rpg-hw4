@@ -3,10 +3,19 @@
     box-sizing: border-box;
 }
 
+body{
+    background-image: url("../images/take4-background.jpg")
+}
+
 img{
     height: 150px;
     width: 100px;
     float: left;
+}
+
+h4{
+    text-align: center;
+    width: 100%;
 }
 
 .hero{
@@ -16,10 +25,13 @@ img{
 
 .enemy{
     top: 250px;
+    float: left;
 }
 
 .defender{
     top: 500px;
+    position: absolute;
+    left: 0;
 }
 
 .row{
