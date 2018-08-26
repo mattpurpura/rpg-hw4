@@ -1,16 +1,28 @@
-.visible{
-    display: inline-block;
+*{
+    position: relative;
+    box-sizing: border-box;
 }
 
-.invisible{
-    display: none;
+img{
+    height: 150px;
+    width: 100px;
+    float: left;
+}
+
+.hero{
+    position: absolute;
+    left: 0;
+}
+
+.enemy{
+    top: 250px;
+}
+
+.defender{
+    top: 500px;
 }
 
 .row{
     margin-top: 15px;
 }
 
-img{
-    height: 200px;
-    width: 150px;
-}
