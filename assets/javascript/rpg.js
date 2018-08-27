@@ -36,8 +36,8 @@ $(document).ready(function() {
 
 
     // console.log(obiwan.health);
- var playerone;
- var playertwo;
+ var playerone = players[0];
+ var playertwo = players[1];
  var firstChoice = true;
  var secondChoice = true;
 
@@ -50,20 +50,26 @@ $(document).ready(function() {
     for(let i = 0; i < 5; i++){
       if ($("#char" + i).hasClass("hero")){
         playerone = players[i];
-        console.log(playerone);
+        $("#player-one").prepend($(".hero"));
      }
      else{
-         $("#char"+ i).addClass("enemy")
+         $("#char"+ i).addClass("enemy");
+         $("#enemy-select").prepend($(".enemy"))
      }  
     } 
  }
 
  function defenderSelect(){
     for(let i = 0; i < 5; i++){
-        if ($("#char" + i).hasClass("defender")){
+        if ($("#char" + i).hasClass("defender") && players[i].health > 0){
           playertwo = players[i];
-          console.log(playertwo);
+          $("#defender-row").prepend($(".defender"));
        }
+            else if ($("#char" + i).hasClass("defender")){
+                $("#char" + i).removeClass("defender");
+                secondChoice = true;
+                alert("That player has no more health");
+            }
       } 
  }
 
@@ -72,6 +78,7 @@ $(document).ready(function() {
         if ($("#char" + i).hasClass("defender")){
             $("#char" + i).removeClass("defender")
             $("#char"+ i).addClass("enemy")
+            $("#enemy-select").append($(".enemy"))
        } 
       }
  }

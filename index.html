@@ -7,36 +7,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="assets/javascript/rpg.js"></script>
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Star Wars RPG</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Mario RPG</title>
 </head>
 <body>
-
-    <div class="container">
-        <div class = "row">
-            <div class="col-sm-3">
-                <div class="row">
-                    <img class = "btn" id="char0" src="assets/images/mario-pose2.png">
-                </div>
-                <div class="row">
-                    <h4>Health</h4>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <img class = "btn" id="char1" src="assets/images/Luigi.png">
-                <h4>Health</h4>
-            </div>
-            <div class="col-sm-3">
-                <img class = "btn" id="char2" src="assets/images/Princess_Peach_NSMBW.png">
-                <h4>Health</h4>
-            </div>
-            <div class="col-sm-3">
-                <img class = "btn" id="char3" src ="assets/images/Bowser.png">
-                <h4>Health</h4>
-            </div>   
+    <div class="header" id="hero-select">
+        <img class = "btn" id="char0" src="assets/images/mario-pose2.png">
+        <img class = "btn" id="char1" src="assets/images/Luigi.png">
+        <img class = "btn" id="char2" src="assets/images/Princess_Peach_NSMBW.png">
+        <img class = "btn" id="char3" src ="assets/images/Bowser.png">
         </div>
-        <button class = "btn" id="attack">Attack</button>
-    </div>
     
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5" id="player-one">
+    
+                </div>
+                <div class="col-lg-2" id="attack-button">
+                    <button class = "btn" id="attack">Attack</button>
+                </div>
+                <div class="col-lg-5" id="defender-row">
+                    
+                </div>
+            </div>
+            <div class="row" id="enemy-select">
+                
+            </div>
+    
+        </div>
+
 
     
 </body>
