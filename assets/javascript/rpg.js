@@ -167,16 +167,16 @@ function winLogic(){
 
 $(".char").hover( function(){
     if ($(this).is("#char0")){
-        $("#stats-area").html(players[0].name + " -- Health: " + players[0].health + " -- Attack: " + players[0].attack);
+        $("#stats-area").html(players[0].name + " -- Health: " + players[0].health);
     }
     else if ($(this).is("#char1")){
-        $("#stats-area").html(players[1].name + " -- Health: " + players[1].health + " -- Attack: " + players[1].attack);
+        $("#stats-area").html(players[1].name + " -- Health: " + players[1].health);
     }
     if ($(this).is("#char2")){
-        $("#stats-area").html(players[2].name + " -- Health: " + players[2].health + " -- Attack: " + players[2].attack);
+        $("#stats-area").html(players[2].name + " -- Health: " + players[2].health);
     }
     if ($(this).is("#char3")){
-        $("#stats-area").html(players[3].name + " -- Health: " + players[3].health + " -- Attack: " + players[3].attack);
+        $("#stats-area").html(players[3].name + " -- Health: " + players[3].health);
     }
     
     
