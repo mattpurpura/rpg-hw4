@@ -6,32 +6,32 @@ function initialSetup(){
   players = [
      
     {   name: "Mario",
-        health: 100,
-        attack: 10,
-        increment: 10,
-        counter: 20,
+        health: 200,
+        attack: 8,
+        increment: 8,
+        counter: 12,
     },  
     {
         name: "Luigi",
         health: 150,
-        attack: 5,
-        increment: 5,
-        counter: 5,
+        attack: 10,
+        increment: 10,
+        counter: 8,
     },
     {
         name: "Princess Peach",
-        health: 150,
-        attack: 8,
-        increment: 8,
-        counter: 5,
+        health: 80,
+        attack: 15,
+        increment: 15,
+        counter: 30,
         
     },
     {
         name: "Bowser",
-        health: 150,
-        attack: 3,
-        increment: 3,
-        counter: 5,
+        health: 300,
+        attack: 5,
+        increment: 5,
+        counter: 1,
         
     }
  ];
@@ -136,6 +136,8 @@ function winLogic(){
  function reset(){
     $("#defender-health").html("");
     $("#hero-health").html("");
+    $("#attack-message").html("");
+    $("#counter-message").html("");
     for(let i = 0; i < 4; i++){
         $("#char"+i).appendTo($("#hero-select"))
         if ($("#char" + i).hasClass("defender")){
@@ -153,11 +155,32 @@ function winLogic(){
                 $("#char" + i).removeClass("hero")
             }
     }
+
+    if ($("#reset").hasClass("defender")){
+        ($("#reset").removeClass("defender"))
+    }
     firstChoice = true;
     secondChoice = true;
       initialSetup();
       
     }
+
+$(".char").hover( function(){
+    if ($(this).is("#char0")){
+        $("#stats-area").html(players[0].name + " -- Health: " + players[0].health + " -- Attack: " + players[0].attack);
+    }
+    else if ($(this).is("#char1")){
+        $("#stats-area").html(players[1].name + " -- Health: " + players[1].health + " -- Attack: " + players[1].attack);
+    }
+    if ($(this).is("#char2")){
+        $("#stats-area").html(players[2].name + " -- Health: " + players[2].health + " -- Attack: " + players[2].attack);
+    }
+    if ($(this).is("#char3")){
+        $("#stats-area").html(players[3].name + " -- Health: " + players[3].health + " -- Attack: " + players[3].attack);
+    }
+    
+    
+});
 
 
 $(".btn").on("click", function(){
