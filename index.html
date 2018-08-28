@@ -16,19 +16,35 @@
         <img class = "btn" id="char1" src="assets/images/Luigi.png">
         <img class = "btn" id="char2" src="assets/images/Princess_Peach_NSMBW.png">
         <img class = "btn" id="char3" src ="assets/images/Bowser.png">
+        <h2 id="choose">Choose a character!</h2>
         </div>
     
         <div class="container">
             <div class="row">
+                <div class="col-lg-6">
+                    <h2 id="hero-title">Your Character: <span id="hero-health"></span></h2>
+                </div>
+                <div class="col-lg-6">
+                    <h2 id="defender-title">Defender: <span id="defender-health"></span></h2>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-5" id="player-one">
     
                 </div>
-                <div class="col-lg-2" id="attack-button">
+                <div class="col-lg-2" id="attack-area">
+                    <p id="attack-message"></p>
+                    <p id="counter-message"></p>
                     <button class = "btn" id="attack">Attack</button>
+                    <button class = "btn" id="reset">Reset</button>
                 </div>
                 <div class="col-lg-5" id="defender-row">
                     
                 </div>
+            </div>
+            <div class="row">
+               <h3 id="enemy-title">Select an Enemy to Attack</h3> 
+
             </div>
             <div class="row" id="enemy-select">
                 
